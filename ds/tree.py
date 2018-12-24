@@ -28,6 +28,9 @@ class BNode(graph.Node):
     def right(self, right):
         self.children[1] = right
 
+    def is_leaf(self):
+        return self.left is None and self.right is None
+
 
 def pre_order(root):
     if root is None:
@@ -64,4 +67,10 @@ def post_order(root):
 
 
 def height(root):
-    pass
+    if root is None:
+        return 0
+
+    if root.is_leaf():
+        return 1
+
+    return 1 + max(height(root.left), height(root.right))

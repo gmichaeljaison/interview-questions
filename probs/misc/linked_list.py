@@ -17,6 +17,7 @@ def reverse(root):
     rev = i
     return rev
 
+
 def test_reverse():
     a = Node(1, Node(2, Node(3, Node(4, None))))
     b = reverse(a)
@@ -38,8 +39,10 @@ def check_palindrome(root, root_rev):
     else:
         return None
 
+
 def is_palindrome(root):
     return check_palindrome(root, root)
+
 
 def test_is_palindrome():
     a = Node(1, Node(2, Node(3, Node(2, Node(1, None)))))
